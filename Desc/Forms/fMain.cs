@@ -226,10 +226,6 @@ namespace Desc
                 cbxLastTask.Enabled = false;
 
                 this.Refresh();
-
-                //dgv.Focus();
-                //
-                //dgv.Refresh();
             }
         }
 

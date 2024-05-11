@@ -33,31 +33,31 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxLastTask = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbxStatus = new System.Windows.Forms.ComboBox();
+            this.cbxExec = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbxDescription = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxShort = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbxFullName = new System.Windows.Forms.TextBox();
+            this.LblFullTitle = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.LblVersion = new System.Windows.Forms.Label();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LblFullTitle = new System.Windows.Forms.Label();
-            this.tbxFullName = new System.Windows.Forms.TextBox();
-            this.tbxShort = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbxDescription = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbxExec = new System.Windows.Forms.ComboBox();
-            this.cbxStatus = new System.Windows.Forms.ComboBox();
-            this.cbxLastTask = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -120,6 +120,110 @@
             this.panel1.Size = new System.Drawing.Size(335, 418);
             this.panel1.TabIndex = 1;
             // 
+            // cbxLastTask
+            // 
+            this.cbxLastTask.FormattingEnabled = true;
+            this.cbxLastTask.Location = new System.Drawing.Point(165, 140);
+            this.cbxLastTask.Name = "cbxLastTask";
+            this.cbxLastTask.Size = new System.Drawing.Size(156, 21);
+            this.cbxLastTask.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(6, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 41);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Предыдущая задача";
+            // 
+            // cbxStatus
+            // 
+            this.cbxStatus.FormattingEnabled = true;
+            this.cbxStatus.Location = new System.Drawing.Point(165, 113);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(156, 21);
+            this.cbxStatus.TabIndex = 11;
+            // 
+            // cbxExec
+            // 
+            this.cbxExec.FormattingEnabled = true;
+            this.cbxExec.Location = new System.Drawing.Point(165, 85);
+            this.cbxExec.Name = "cbxExec";
+            this.cbxExec.Size = new System.Drawing.Size(156, 21);
+            this.cbxExec.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(6, 111);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Статус";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(6, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Исполнитель";
+            // 
+            // tbxDescription
+            // 
+            this.tbxDescription.Location = new System.Drawing.Point(165, 59);
+            this.tbxDescription.Name = "tbxDescription";
+            this.tbxDescription.Size = new System.Drawing.Size(156, 20);
+            this.tbxDescription.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(6, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Описание";
+            // 
+            // tbxShort
+            // 
+            this.tbxShort.Location = new System.Drawing.Point(165, 33);
+            this.tbxShort.Name = "tbxShort";
+            this.tbxShort.Size = new System.Drawing.Size(156, 20);
+            this.tbxShort.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Короткое название";
+            // 
+            // tbxFullName
+            // 
+            this.tbxFullName.Location = new System.Drawing.Point(165, 7);
+            this.tbxFullName.Name = "tbxFullName";
+            this.tbxFullName.Size = new System.Drawing.Size(156, 20);
+            this.tbxFullName.TabIndex = 1;
+            // 
+            // LblFullTitle
+            // 
+            this.LblFullTitle.AutoSize = true;
+            this.LblFullTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LblFullTitle.Location = new System.Drawing.Point(6, 7);
+            this.LblFullTitle.Name = "LblFullTitle";
+            this.LblFullTitle.Size = new System.Drawing.Size(142, 20);
+            this.LblFullTitle.TabIndex = 0;
+            this.LblFullTitle.Text = "Полное название";
+            // 
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
@@ -139,7 +243,7 @@
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(339, 418);
             this.dgv.TabIndex = 0;
             this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
@@ -172,6 +276,20 @@
             this.Column3.HeaderText = "Номер";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Visible = false;
             // 
             // tabPage3
             // 
@@ -232,124 +350,6 @@
             this.LblVersion.Size = new System.Drawing.Size(70, 25);
             this.LblVersion.TabIndex = 0;
             this.LblVersion.Text = "label1";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
-            // 
-            // LblFullTitle
-            // 
-            this.LblFullTitle.AutoSize = true;
-            this.LblFullTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LblFullTitle.Location = new System.Drawing.Point(6, 7);
-            this.LblFullTitle.Name = "LblFullTitle";
-            this.LblFullTitle.Size = new System.Drawing.Size(142, 20);
-            this.LblFullTitle.TabIndex = 0;
-            this.LblFullTitle.Text = "Полное название";
-            // 
-            // tbxFullName
-            // 
-            this.tbxFullName.Location = new System.Drawing.Point(165, 7);
-            this.tbxFullName.Name = "tbxFullName";
-            this.tbxFullName.Size = new System.Drawing.Size(156, 20);
-            this.tbxFullName.TabIndex = 1;
-            // 
-            // tbxShort
-            // 
-            this.tbxShort.Location = new System.Drawing.Point(165, 33);
-            this.tbxShort.Name = "tbxShort";
-            this.tbxShort.Size = new System.Drawing.Size(156, 20);
-            this.tbxShort.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Короткое название";
-            // 
-            // tbxDescription
-            // 
-            this.tbxDescription.Location = new System.Drawing.Point(165, 59);
-            this.tbxDescription.Name = "tbxDescription";
-            this.tbxDescription.Size = new System.Drawing.Size(156, 20);
-            this.tbxDescription.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(6, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Описание";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(6, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Исполнитель";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(6, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Статус";
-            // 
-            // cbxExec
-            // 
-            this.cbxExec.FormattingEnabled = true;
-            this.cbxExec.Location = new System.Drawing.Point(165, 85);
-            this.cbxExec.Name = "cbxExec";
-            this.cbxExec.Size = new System.Drawing.Size(156, 21);
-            this.cbxExec.TabIndex = 10;
-            // 
-            // cbxStatus
-            // 
-            this.cbxStatus.FormattingEnabled = true;
-            this.cbxStatus.Location = new System.Drawing.Point(165, 113);
-            this.cbxStatus.Name = "cbxStatus";
-            this.cbxStatus.Size = new System.Drawing.Size(156, 21);
-            this.cbxStatus.TabIndex = 11;
-            // 
-            // cbxLastTask
-            // 
-            this.cbxLastTask.FormattingEnabled = true;
-            this.cbxLastTask.Location = new System.Drawing.Point(165, 140);
-            this.cbxLastTask.Name = "cbxLastTask";
-            this.cbxLastTask.Size = new System.Drawing.Size(156, 21);
-            this.cbxLastTask.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(6, 138);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 41);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Предыдущая задача";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
             // 
             // fMain
             // 
