@@ -30,6 +30,7 @@ namespace Desc
         private void fMain_Load(object sender, EventArgs e)
         {
             dgv.Width = dgv.Width * 2;
+            lastWidth = dgv.Width;
             getProjects();
 
             if (File.Exists("selected.txt"))
@@ -108,6 +109,12 @@ namespace Desc
         {
             selectedProjectId = int.Parse(((Button)sender).Tag.ToString());
             tabControl_Selected(null, null);
+            tbxSearch.Text = "";
+            if (dgv.Width != lastWidth)
+            {
+                dgv.Width = lastWidth;
+                isCliced = false;
+            }
         }
 
         private void tabControl_TabIndexChanged(object sender, EventArgs e)
@@ -205,7 +212,6 @@ namespace Desc
                 {
                     dgv.Width = dgv.Width / 2;
                 }
-                lastWidth = dgv.Width;
                 
                 isCliced = true;
 
@@ -220,10 +226,22 @@ namespace Desc
                 cbxStatus.Items.Add(allStatuses.First(s => s.IdStatus == t.StatusId).Name);
                 cbxStatus.SelectedIndex = 0;
                 cbxStatus.Enabled = false;
-                
-                cbxLastTask.Items.Add(currentProjectTasks.First(cp => cp.IdTask == t.IdTask));
-                cbxLastTask.SelectedIndex= 0;
-                cbxLastTask.Enabled = false;
+
+                tbxFullName.Enabled = false;
+                tbxShort.Enabled = false;
+                tbxDescription.Enabled = false;
+
+                try
+                {
+                    cbxLastTask.Items.Add(currentProjectTasks.First(cp => cp.PreviousTaskId == t.IdTask).FullTitle);
+                    cbxLastTask.SelectedIndex = 0;
+                    cbxLastTask.Enabled = false;
+                }
+                catch
+                {
+                    cbxLastTask.Items.Clear();
+                    cbxLastTask.Enabled = false;
+                }
 
                 this.Refresh();
             }
@@ -233,6 +251,37 @@ namespace Desc
         {
             ColorConverter converter = new ColorConverter();
             dgv.Rows[e.RowIndex].DefaultCellStyle.BackColor = (Color)converter.ConvertFromString(dgv.Rows[e.RowIndex].Cells[4].Value.ToString());
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            isCliced = false;
+            dgv.Width = lastWidth;
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxSearch.Text != "")
+            {
+                dgv.Rows.Clear();
+                List<Classes.Task> sortedTasks = currentProjectTasks.FindAll(p => p.FullTitle.Contains(tbxSearch.Text) || p.Description.Contains(tbxSearch.Text));
+                foreach (Classes.Task t in sortedTasks)
+                {
+                    int i = dgv.Rows.Add();
+                    DataGridViewRow row = dgv.Rows[i];
+                    ColorConverter converter = new ColorConverter();
+                    row.DefaultCellStyle.BackColor = (Color)converter.ConvertFromString(allStatuses.First(s => s.IdStatus == sortedTasks[i].StatusId).ColorHex);
+                    row.Cells[4].Value = (allStatuses.First(s => s.IdStatus == sortedTasks[i].StatusId).ColorHex);
+                    row.Cells[0].Value = sortedTasks[i].FullTitle;
+                    row.Cells[1].Value = allUsers.Where(u => u.IdUser == sortedTasks[i].ExecutiveEmployeeId).ToList()[0].Name;
+                    row.Cells[2].Value = sortedTasks[i].Deadline.ToString("dd.MM.yyyy");
+                    row.Cells[3].Value = sortedTasks[i].IdTask;
+                }
+            }
+            else
+            {
+                tabControl_Selected(null,null);
+            }
         }
     }
 }
