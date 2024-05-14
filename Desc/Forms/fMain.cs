@@ -315,11 +315,70 @@ namespace Desc
             cbxStatus.Enabled = true;
             cbxExec.Enabled = true;
             cbxLastTask.Enabled = true;
+
+            getStatuses();
+            getUsers();
+            loadTasks(selectedProjectId);
+
+            foreach (Classes.Task t in currentProjectTasks)
+            { 
+                cbxLastTask.Items.Add(t.FullTitle);
+            }
+
+            foreach (Classes.Status s in allStatuses)
+            {
+                cbxStatus.Items.Add(s.Name);
+            }
+
+            foreach (Classes.User u in allUsers)
+            {
+                cbxExec.Items.Add(u.Name);
+            }
+
         }
 
         private void btnAddt_Click(object sender, EventArgs e)
         {
-            if()
+
+            if (tbxShort.Text != "" && tbxFullName.Text != "" && tbxDescription.Text != "" && cbxExec.SelectedIndex != -1 && cbxStatus.SelectedIndex != -1)
+            {
+                Classes.Task tsk = new Classes.Task();
+
+                if (cbxLastTask.SelectedIndex == -1)
+                {
+                    
+                }
+                else
+                {
+                    tsk.PreviousTaskId = currentProjectTasks.Find(p => p.FullTitle == cbxLastTask.SelectedItem.ToString()).IdTask;
+                }
+
+                tsk.FullTitle = tbxFullName.Text;
+                tsk.ShortTitle = tbxShort.Text;
+                tsk.Description = tbxDescription.Text;
+                tsk.ProjectId = currentProjectTasks.First().ProjectId;
+                tsk.ExecutiveEmployeeId = allUsers.Find(u => u.Name == cbxExec.SelectedItem.ToString()).IdUser;
+                tsk.StatusId = allStatuses.Find(f => f.Name == cbxStatus.SelectedItem.ToString()).IdStatus;
+                tsk.CreatedTime = DateTime.Now.ToString("hh:mm");
+
+                createNewTask(tsk);
+            }
+            else
+            {
+                MessageBox.Show("Для того чтобы добавить новую задачу вы должны заполнить все поля");
+            }
+        }
+
+        private void createNewTask(Classes.Task tsk)
+        {
+            HttpClient client = new HttpClient();
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(tsk);
+            StringContent content = new StringContent(json,Encoding.UTF8, "application/json");
+            Task<HttpResponseMessage> tskMsg = client.PostAsync("https://localhost:44321/api/Tasks",content);
+            tskMsg.Wait();
+            HttpResponseMessage response = tskMsg.Result;
+            loadTasks(selectedProjectId);
+            tabControl_Selected(null, null);
         }
     }
 }
