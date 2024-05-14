@@ -31,7 +31,7 @@ namespace Desc
         private void fMain_Load(object sender, EventArgs e)
         {
             dgv.Width = dgv.Width * 2;
-            btnAdd.Left = btnAdd.Left * 2;
+            btnAdd.Left = (btnAdd.Left * 2) + 150;
             w = btnAdd.Left;
             lastWidth = dgv.Width;
             getProjects();
@@ -116,6 +116,7 @@ namespace Desc
             if (dgv.Width != lastWidth)
             {
                 dgv.Width = lastWidth;
+                btnAdd.Left = w;
                 isCliced = false;
             }
         }
@@ -213,10 +214,11 @@ namespace Desc
             {
                 if (!isCliced)
                 {
-                    btnAdd.Left = dgv.Left / 2;
+                    btnAdd.Left = (dgv.Left / 2) + 150;
                     dgv.Width = dgv.Width / 2;
                 }
-                
+
+                btnAddt.Visible = false;
                 isCliced = true;
 
                 int id = int.Parse(dgv.Rows[e.RowIndex].Cells[3].Value.ToString());
@@ -291,7 +293,33 @@ namespace Desc
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (!isCliced)
+            {
+                btnAdd.Left = (dgv.Left / 2) + 150;
+                dgv.Width = dgv.Width / 2;
+            }
+            btnAddt.Visible = true;
 
+            isCliced = true;
+
+            tbxFullName.Text = "";
+            tbxDescription.Text = "";
+            tbxShort.Text = "";
+            cbxExec.Items.Clear();
+            cbxLastTask.Items.Clear();
+            cbxStatus.Items.Clear();
+
+            tbxFullName.Enabled = true;
+            tbxDescription.Enabled = true;
+            tbxShort.Enabled = true;
+            cbxStatus.Enabled = true;
+            cbxExec.Enabled = true;
+            cbxLastTask.Enabled = true;
+        }
+
+        private void btnAddt_Click(object sender, EventArgs e)
+        {
+            if()
         }
     }
 }

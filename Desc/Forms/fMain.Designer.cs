@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -62,6 +62,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.LblVersion = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnAddt = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -129,8 +130,8 @@
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Green;
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.title,
@@ -193,6 +194,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAddt);
             this.panel1.Controls.Add(this.btnHide);
             this.panel1.Controls.Add(this.cbxLastTask);
             this.panel1.Controls.Add(this.label5);
@@ -395,6 +397,16 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnAddt
+            // 
+            this.btnAddt.Location = new System.Drawing.Point(10, 188);
+            this.btnAddt.Name = "btnAddt";
+            this.btnAddt.Size = new System.Drawing.Size(149, 31);
+            this.btnAddt.TabIndex = 5;
+            this.btnAddt.Text = "Добавить задачу";
+            this.btnAddt.UseVisualStyleBackColor = true;
+            this.btnAddt.Click += new System.EventHandler(this.btnAddt_Click);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +469,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbxSearch;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddt;
     }
 }
 
