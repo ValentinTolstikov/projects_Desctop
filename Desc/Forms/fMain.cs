@@ -22,6 +22,7 @@ namespace Desc
         public static int selectedProjectId = -1;
         public int version = 1;
 
+        int w = -1;
         public fMain()
         {
             InitializeComponent();
@@ -30,6 +31,8 @@ namespace Desc
         private void fMain_Load(object sender, EventArgs e)
         {
             dgv.Width = dgv.Width * 2;
+            btnAdd.Left = btnAdd.Left * 2;
+            w = btnAdd.Left;
             lastWidth = dgv.Width;
             getProjects();
 
@@ -210,6 +213,7 @@ namespace Desc
             {
                 if (!isCliced)
                 {
+                    btnAdd.Left = dgv.Left / 2;
                     dgv.Width = dgv.Width / 2;
                 }
                 
@@ -256,6 +260,7 @@ namespace Desc
         private void btnHide_Click(object sender, EventArgs e)
         {
             isCliced = false;
+            btnAdd.Left = w;
             dgv.Width = lastWidth;
         }
 
@@ -282,6 +287,11 @@ namespace Desc
             {
                 tabControl_Selected(null,null);
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

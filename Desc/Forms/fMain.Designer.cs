@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -61,6 +61,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.LblVersion = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -93,6 +94,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnAdd);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.tbxSearch);
             this.tabPage2.Controls.Add(this.dgv);
@@ -127,8 +129,8 @@
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Green;
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.title,
@@ -383,6 +385,16 @@
             this.LblVersion.TabIndex = 0;
             this.LblVersion.Text = "label1";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(193, 385);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(149, 36);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Добавить задачу";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,6 +456,7 @@
         private System.Windows.Forms.Button btnHide;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 
